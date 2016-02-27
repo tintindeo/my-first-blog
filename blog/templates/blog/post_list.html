@@ -3,41 +3,17 @@
 <title>Ola's blog</title>
 </head>
 <body>
-<p>Hi there!</p>
-<p>It works!</p>
-<h1>Un título</h1> 
-<h2>Un subtítulo</h2> 
-<h3>Un subsubtítulo</h3> 
-<h4>Otro subtitulos</h4>
-<em>cursiva</em> 
-<br />
-<strong>negritas</strong> 
-<br />
-<a href="http://djangogirls.org">link</a>
-<br />
-<ul>
-	<li>primer elemento</li>
-	<li>segundo elemento</li>
-</ul> 
-<br />
 
 <div>
-<h1><a href="">Django Girls Blog</a></h1>
+<h1><a href="/">Django Girls Blog</a></h1>
 </div>
-
+{% for post in posts %}
 <div>
-<p>published: 27.02.2016, 14:55</p>
-<h2><a href="">My first post</a></h2>
-<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec </p>
+<p>published: {{ post.published_date }}</p>
+<h1><a href="">{{ post.title }}</a></h1>
+<p>{{ post.text|linebreaks }}</p>
 </div>
-
-<div>
-<p>published: 27.02.2016, 14:55</p>
-<h2><a href="">My second post</a></h2>
-<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec </p>
-</div>
-
-
+{% endfor %}
 
 </body>
 </html>
